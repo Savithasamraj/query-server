@@ -30,7 +30,7 @@ let authenticate = function (req, res, next) {
       res.status(401).json({ message: "Unauthorized" });
     }
   } else {
-    res.json("error");
+    res.json("errors");
     res.status(401).json({ message: "Unauthorized" });
   }
 };
