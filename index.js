@@ -4,7 +4,7 @@ const cors = require("cors");
 const bcryptjs = require("bcryptjs");
 const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
-const dotenv = require("dotenv")
+const dotenv = require("dotenv").config()
 const URL = process.env.db;
 
 
@@ -135,6 +135,6 @@ console.log(error)
     }
   
 });
-app.listen(5000, () => {
+app.listen(process.env.PORT||5000, () => {
   console.log("running in ");
 });
