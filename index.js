@@ -72,17 +72,18 @@ console.log("data")
       if (match) {
         // Token
         const token = jwt.sign({ _id: user._id },process.env.SECRET);
-
+if(user.username===req.body.username){
         res.json({
           message: "Welcome to Query Ticket Raising Portal",
           token,
         
         });
+      }
       } else {
         res.json({
           message: "Password is incorrect",
-          token,
-          _id,
+          
+          
         });
       }
     } else {
